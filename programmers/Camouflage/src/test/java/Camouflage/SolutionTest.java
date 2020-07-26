@@ -55,7 +55,7 @@ public class SolutionTest {
 
     @Test
     public void test6(){
-        int answer = 29;
+        int answer = 35;
         String[][] input = new String[7][2];
         input[0] = new String[]{"blue_pants", "pant"};
         input[1] = new String[]{"green_pants", "pant"};
