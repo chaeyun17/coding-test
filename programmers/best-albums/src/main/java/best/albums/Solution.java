@@ -3,10 +3,11 @@ package best.albums;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Solution{
   public int[] solution(String[] genres, int[] plays) {
-    HashMap<String, Integer> genresPlays = new HashMap<>();
+    Map<String, Integer> genresPlays = new HashMap<>();
     for(int i=0; i<genres.length; i++){
         String genre = genres[i];
         if(genresPlays.containsKey(genre)){
@@ -31,13 +32,14 @@ public class Solution{
             String aGenre = genres[a];
             String bGenre = genres[b];
 
-            if(aGenre == bGenre){
+            if(aGenre.equals(bGenre)){
                 if(plays[a] < plays[b]){
                     list.set(aIdx,b);
                     list.set(bIdx,a);
                 }else if(plays[a] == plays[b]){
-                    if(a < b){
-                        list.set(a,b);
+                    if(b < a){
+                        list.set(aIdx, b);
+                        list.set(bIdx, a);
                     }
                 }else{
                     continue;
@@ -48,7 +50,6 @@ public class Solution{
                     list.set(bIdx,a);
                 }
             }
-
         }
     }
     List<Integer> list2 = new ArrayList<>();
@@ -72,6 +73,4 @@ public class Solution{
     }
     return answer;
   }
-
-
 }

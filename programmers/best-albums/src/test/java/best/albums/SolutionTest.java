@@ -28,5 +28,19 @@ public class SolutionTest {
         
         assertArrayEquals(answer, result);
     }
+
+    @Test
+    public void testcase3(){
+        int[] answer = {1, 4, 3, 0};
+        String[] types = {"classic", "pop", "classic", "classic", "pop"};
+        int[] plays = {150, 2500, 150, 800, 2500};
+        
+        Solution sol = new Solution();
+        int[] result = sol.solution(types, plays);
+        
+        assertArrayEquals(answer, result);
+    }
+
+
     
 }
